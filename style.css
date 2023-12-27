@@ -1,0 +1,160 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eee9ca;
+}
+
+header {
+    background-color: #fff;
+    color: #453224;
+    padding: 10px;
+    text-align: center;
+}
+
+button {
+    cursor: pointer;
+}
+
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.menu-item {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    width: 200px;
+    background-color: #ffffff;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 20%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    background-color: #eee9ca;
+    border: 1px solid #453224;
+    display: none;
+}
+
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-item {
+    position: relative;
+    margin-bottom: 5px;
+}
+
+.checkout-btn {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.item-img {
+    width: 200px;
+    height: 135px;
+}
+
+.item-category {
+    font-size: 13px;
+}
+
+.price-weight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 16px;
+}
+
+.price-weight .weight {
+    font-size: 13px;
+    margin: auto 0;
+}
+
+.close-cart-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.remove-from-cart-btn {
+    cursor: pointer;
+    font-size: 24px;
+    color: #333;
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    position: absolute;
+    top: 0px;
+    right: 0;
+}
+
+.amount-cart-item {
+    margin-right: 20px;
+}
+
+.name-remove-button {
+    margin-bottom: 5px;
+}
+
+.cart-item-actions {
+    margin-bottom: 15px;
+}
+
+.view-cart-btn {
+    margin-left: auto;
+    background: none;
+    border: none;
+    font-size: 26px;
+    cursor: pointer;
+    color: #453224;
+}
+
+.header-data-wrapper {
+    margin-left: 2%;
+    margin-right: 2%;
+}
+
+.header-data {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.quantity-btn {
+    background: none;
+    border: none;
+    font-size: 15px;
+}
+
+.add-to-cart-btn {
+    background: none;
+    border: none;
+    font-size: 25px;
+}
+
+.quantity {
+    font-weight: bold;
+    font-size: 20px;
+}
