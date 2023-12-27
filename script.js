@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Получаем необходимые элементы из документа
+    
     const menuContainer = document.querySelector(".menu");
     const cartContainer = document.querySelector(".cart");
     const cartItemsContainer = document.querySelector(".cart-items");
@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewCartBtn = document.querySelector(".view-cart-btn");
     const checkoutBtn = document.querySelector(".checkout-btn");
 
-    // Массив объектов с предложениями в меню
     let menuItems = [
         { "id": 1, "name": "Куриный суп", "category": "Супы", "price": 350, "src": "img\\chicken-soup.jpeg", "weight": 400 },
         { "id": 2, "name": "Фланк стейк", "category": "Мясо", "price": 950, "src": "img\\flank-steak.jpg", "weight": 330 },
@@ -23,18 +22,17 @@ document.addEventListener("DOMContentLoaded", () => {
         { "id": 12, "name": "Сахарные свиные рёбрышки", "category": "Мясо", "price": 830, "src": "img\\sugar-pork-ribs.jpg", "weight": 665 },
     ];
 
-    // Массив для хранения выбранных элементов корзины
+    const categories = ["Всё", "Супы", "Мясо", "Салаты", "Напитки", "Гарниры"]
+
     let cartItems = [];
 
-    // Функция для отображения меню на веб-странице
-    function displayMenu() {
+    function displayMenu(menuItems) {
         // Очищаем контейнер меню
         menuContainer.innerHTML = "";
-        // Создаем элементы для каждого блюда в меню
         menuItems.forEach(item => {
             const menuItem = document.createElement("div");
             menuItem.className = "menu-item";
-            // Выводим информацию о блюде и кнопку "Добавить в корзину"
+
             menuItem.innerHTML = `
                 <img class="item-img" src=${item.src}
                 <h3 class="item-name">${item.name}</h3>
@@ -56,11 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <i class='fa fa-cart-plus'></i>
                 </button>
             `;
-            // Добавляем элемент меню в контейнер
             menuContainer.appendChild(menuItem);
         });
 
-        // Добавляем слушатель событий для кнопок "Добавить в корзину"
         const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
         addToCartBtns.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -74,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
             });
         });
 
-        // Добавляем слушатели событий для кнопок управления количеством
         const quantityBtns = document.querySelectorAll('.quantity-btn');
         quantityBtns.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -90,23 +85,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
 
                 quantityElement.textContent = quantity;
-                quantityElement.dataset.quantity = quantity; // Обновляем атрибут data-quantity
+                quantityElement.dataset.quantity = quantity;
             });
         });
     }
 
-    // Функция для добавления выбранного элемента в корзину
     function addToCart(itemId, quantity = 1) {
         const selectedItem = menuItems.find(item => item.id === itemId);
 
-        // Проверяем, есть ли уже такой элемент в корзине
         const existingItem = cartItems.find(item => item.id === itemId);
 
         if (existingItem) {
-            // Если элемент уже есть в корзине, увеличиваем его количество
             existingItem.quantity += quantity;
         } else {
-            // Если элемента еще нет в корзине, добавляем его с указанным количеством
             selectedItem.quantity = quantity;
             cartItems.push(selectedItem);
         }
@@ -114,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCart();
     }
 
-    // Функция для обновления содержимого корзины и отображения на странице
     function updateCart() {
         cartItemsContainer.innerHTML = "";
         let totalAmount = 0;
@@ -122,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         cartItems.forEach(item => {
             const cartItem = document.createElement("li");
             cartItem.className = "cart-item";
-            // Выводим информацию о элементе корзины
+
             cartItem.innerHTML = `
             <div class="name-remove-button">
                 <span>${item.name}</span>
@@ -139,12 +129,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 </button>
             </div>
             `;
-            // Добавляем элемент корзины в контейнер
+
             cartItemsContainer.appendChild(cartItem);
             totalAmount += item.price * item.quantity;
         });
 
-        // Обновляем общую сумму и отображаем корзину
         totalAmountSpan.textContent = totalAmount;
         cartContainer.style.display = "block";
         cartContainer.style.width = "20%";
@@ -153,7 +142,6 @@ document.addEventListener("DOMContentLoaded", () => {
         cartContainer.style.top = headerHeight + "px";
 
 
-        // Добавляем слушатели событий для кнопок управления количеством и удаления из корзины
         const quantityBtns = document.querySelectorAll('.quantity-btn');
         quantityBtns.forEach(btn => {
             btn.addEventListener('click', function () {
@@ -191,12 +179,10 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCart();
     }
 
-    // Слушатель события для кнопки "Смотреть корзину"
     viewCartBtn.addEventListener("click", function () {
         updateCart();
     });
 
-    // Слушатель события для кнопки "Checkout"
     checkoutBtn.addEventListener("click", function () {
         alert("Оформление заказа пока не реализовано");
     });
@@ -207,12 +193,48 @@ document.addEventListener("DOMContentLoaded", () => {
     closeCartBtn.innerHTML = '&times;';
     cartHeader.appendChild(closeCartBtn);
 
-    // Слушатель события для кнопки закрытия корзины
     closeCartBtn.addEventListener('click', function () {
         cartContainer.style.display = "none";
         menuContainer.style.width = "100%";
     });
 
-    // Вызываем функцию отображения меню при загрузке страницы
-    displayMenu();
+    const barsBtn = document.querySelector(".bars-btn");
+    const filterMenuContainer = document.createElement("div");
+    filterMenuContainer.classList.add("filter-menu");
+    document.body.appendChild(filterMenuContainer);
+
+    barsBtn.addEventListener("click", () => {
+        displayFilterMenu();
+        filterMenuContainer.classList.toggle("show");
+    });
+
+    function displayFilterMenu() {
+        filterMenuContainer.innerHTML = "";
+
+        categories.forEach(category => {
+            const filterItem = document.createElement("div");
+            filterItem.classList.add("filter-item");
+            filterItem.textContent = category;
+
+            filterItem.addEventListener("click", () => {
+                filterMenu(category)
+                filterMenuContainer.classList.toggle("show");
+            });
+
+            filterMenuContainer.appendChild(filterItem);
+        });
+    }
+
+    function filterMenu(category) {
+        if (category === "Всё") {
+            displayMenu(menuItems);
+        } else {
+            const filteredMenu = menuItems.filter(item => item.category === category);
+            menuContainer.innerHTML = "";
+            displayMenu(filteredMenu);
+        }
+
+    }
+
+    displayMenu(menuItems);
 });
