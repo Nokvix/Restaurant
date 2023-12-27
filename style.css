@@ -40,6 +40,7 @@ button {
     padding: 10px;
     background-color: #eee9ca;
     border: 1px solid #453224;
+    border-radius: 5%;
     display: none;
 }
 
@@ -96,6 +97,14 @@ button {
     right: 10px;
 }
 
+.close-cart-btn:hover {
+    opacity: 0.5;
+}
+
+.close-cart-btn:active {
+    opacity: 0.3;
+}
+
 .remove-from-cart-btn {
     cursor: pointer;
     font-size: 24px;
@@ -107,6 +116,14 @@ button {
     position: absolute;
     top: 0px;
     right: 0;
+}
+
+.remove-from-cart-btn:hover {
+    opacity: 0.5;
+}
+
+.remove-from-cart-btn:active {
+    opacity: 0.3;
 }
 
 .amount-cart-item {
@@ -130,9 +147,19 @@ button {
     color: #453224;
 }
 
+.view-cart-btn:hover {
+    opacity: 0.5;
+}
+
+.view-cart-btn:active {
+    opacity: 0.3;
+}
+
 .header-data-wrapper {
+    display: flex;
     margin-left: 2%;
     margin-right: 2%;
+    align-items: center;
 }
 
 .header-data {
@@ -148,13 +175,86 @@ button {
     font-size: 15px;
 }
 
+.quantity-btn:hover {
+    opacity: 0.5;
+}
+
+.quantity-btn:active {
+    opacity: 0.3;
+}
+
 .add-to-cart-btn {
     background: none;
     border: none;
     font-size: 25px;
 }
 
+.add-to-cart-btn:hover {
+    opacity: 0.5;
+}
+
+.add-to-cart-btn:active {
+    opacity: 0.3;
+}
+
 .quantity {
     font-weight: bold;
     font-size: 20px;
+}
+
+.bars-btn {
+    background: none;
+    border: none;
+    font-size: 26px;
+}
+
+.bars-btn:hover {
+    opacity: 0.5;
+}
+
+.bars-btn:active {
+    opacity: 0.3;
+}
+
+.bars-wrapper {
+    margin-right: 2%;
+}
+
+.filter-menu {
+    position: absolute;
+    top: 15vh;
+    left: 1vw;
+    display: none;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border: 1px solid #453224;
+}
+
+.filter-menu.show {
+    display: block;
+}
+
+.filter-item {
+    display: flex;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #ccc;
+    justify-content: center;
+}
+
+.filter-item:last-child {
+    border-bottom: none;
+}
+
+.filter-item:hover {
+    background-color: #eee9ca;
+}
+
+.filter-item:active {
+    opacity: 0.5;
+}
+
+.active {
+    background-color: #eee9ca;
 }
