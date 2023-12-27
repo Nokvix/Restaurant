@@ -254,7 +254,3 @@ button {
 .filter-item:active {
     opacity: 0.5;
 }
-
-.active {
-    background-color: #eee9ca;
-}
