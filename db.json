@@ -17,7 +17,7 @@
     },
     {
         "id": 3,
-        "name": "Салат Цезарь",
+        "name": "Цезарь с фермерским цыпленком и беконом",
         "category": "Салаты",
         "price": 570,
         "src": "img\\caesar-salad.jpg",
@@ -246,5 +246,77 @@
         "price": 750,
         "src": "img\\duck-leg.jpg",
         "weight": 380
+    },
+    {
+        "id": 32,
+        "name": "Гуляшевка из говядины в булке",
+        "category": "Супы",
+        "price": 450,
+        "src": "img\\beef-goulashke.jpg",
+        "weight": 550
+    },
+    {
+        "id": 33,
+        "name": "Крем-суп из белых грибов и шампиньонов",
+        "category": "Супы",
+        "price": 490,
+        "src": "img\\cream-soup-porcini-mushrooms.jpg",
+        "weight": 600
+    },
+    {
+        "id": 34,
+        "name": "Уха из белорыбицы",
+        "category": "Супы",
+        "price": 390,
+        "src": "img\\whitefish-soup.jpg",
+        "weight": 440
+    },
+    {
+        "id": 35,
+        "name": "Солянка от шефа на домашних колбасах",
+        "category": "Супы",
+        "price": 470,
+        "src": "img\\solyanka.jpg",
+        "weight": 460
+    },
+    {
+        "id": 36,
+        "name": "Домашний Оливье с куриной грудкой",
+        "category": "Салаты",
+        "price": 430,
+        "src": "img\\olivier.jpg",
+        "weight": 275
+    },
+    {
+        "id": 37,
+        "name": "Салат \"Сельдь под шубой\"",
+        "category": "Салаты",
+        "price": 390,
+        "src": "img\\herring-under-fur-coat.jpg",
+        "weight": 250
+    },
+    {
+        "id": 38,
+        "name": "Салат Греческий",
+        "category": "Салаты",
+        "price": 510,
+        "src": "img\\greek.jpg",
+        "weight": 350
+    },
+    {
+        "id": 39,
+        "name": "Салат с хрустящими баклажанами",
+        "category": "Салаты",
+        "price": 399,
+        "src": "img\\crispy-aubergine-salad.jpg",
+        "weight": 255
+    },
+    {
+        "id": 40,
+        "name": "Салат с креветками, авокадо и муссом из сыра феты",
+        "category": "Салаты",
+        "price": 670,
+        "src": "img\\prawn-salad.jpg",
+        "weight": 185
     }
 ]
