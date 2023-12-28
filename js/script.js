@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    async function getMenuItems () {
+    async function getMenuItems() {
         const result = await fetch('db.json').then(res => res.json());
         return result;
     }
@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
         totalAmountSpan.textContent = totalAmount;
         cartContainer.style.display = "block";
         cartContainer.style.width = "20%";
-        menuContainer.style.width = "80%";
+        menuContainer.style.width = "78%";
         const headerHeight = document.querySelector('header').offsetHeight;
         cartContainer.style.top = headerHeight + "px";
 
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadFromLocalStorage() {
         let data = localStorage.getItem(keyLocalStorage);
-        
+
         cartItems = data ? JSON.parse(data) : [];
     }
 
@@ -222,6 +222,8 @@ document.addEventListener("DOMContentLoaded", () => {
             closeCheckoutBoxBtn.addEventListener('click', () => {
                 checkoutBoxContainer.style.display = "none";
             });
+
+            createThanksOrder(false);
         } else {
             const checkoutBoxContainer = document.querySelector(".checkout-box-container");
             checkoutBoxContainer.style.display = "block";
@@ -230,8 +232,45 @@ document.addEventListener("DOMContentLoaded", () => {
             closeCheckoutBoxBtn.addEventListener('click', () => {
                 checkoutBoxContainer.style.display = "none";
             });
+
+            createThanksOrder(true);
         }
     });
+
+    function createThanksOrder(isThanksForOrderContainer) {
+        const checkoutBoxContainer = document.querySelector(".checkout-box-container")
+        const placeOrder = document.querySelector(".place-order");
+        
+        placeOrder.addEventListener('click', () => {
+            checkoutBoxContainer.style.display = "none";
+            if (!isThanksForOrderContainer) {
+                const thanksForOrderContainer = document.createElement('div');
+                thanksForOrderContainer.classList.add("thanks-for-order-container");
+                thanksForOrderContainer.innerHTML = `
+                <div class="thanks-for-order">
+                    <div class="thanks-for-order-content">
+                        <div class="thanks-close-thanks-container">
+                            <p class="thanks">Спасибо за заказ!</p>
+                            <button class="close-thanks-btn">&times;</button>
+                        </div>
+                        <p class="thanks-description">В течении 15 минут Вам позвонят</p>
+                    </div>
+                </div>
+                `
+                document.body.appendChild(thanksForOrderContainer);
+            }
+            const thanksForOrderContainer = document.querySelector(".thanks-for-order-container")
+            thanksForOrderContainer.style.display = "block";
+
+            const closeThanksBtn = document.querySelector(".close-thanks-btn");
+            closeThanksBtn.addEventListener('click', () => {
+                thanksForOrderContainer.style.display = "none";
+                localStorage.removeItem(keyLocalStorage);
+                cartItems = [];
+                updateCart();
+            });
+        });
+    }
 
     const cartHeader = document.querySelector('.cart');
     const closeCartBtn = document.createElement('button');
