@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const addToCartBtns = document.querySelectorAll('.add-to-cart-btn');
         addToCartBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', () => {
                 const itemId = parseInt(btn.dataset.itemId);
                 const quantityElement = btn.parentElement.querySelector('.quantity');
                 const quantity = parseInt(quantityElement.dataset.quantity);
@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const quantityBtns = document.querySelectorAll('.quantity-btn');
         quantityBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', () => {
                 const action = btn.dataset.action;
                 const quantityElement = btn.parentElement.querySelector('.quantity');
                 const dataQuantity = quantityElement.dataset.quantity;
@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const quantityBtns = document.querySelectorAll('.quantity-btn');
         quantityBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', () =>  {
                 const action = btn.dataset.action;
                 const itemId = parseInt(btn.dataset.itemId);
                 updateQuantityInCart(itemId, action);
@@ -159,7 +159,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const removeFromCartBtns = document.querySelectorAll('.remove-from-cart-btn');
         removeFromCartBtns.forEach(btn => {
-            btn.addEventListener('click', function () {
+            btn.addEventListener('click', () => {
                 const itemId = parseInt(btn.dataset.itemId);
                 removeFromCart(itemId);
             });
@@ -240,7 +240,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function createThanksOrder(isThanksForOrderContainer) {
         const checkoutBoxContainer = document.querySelector(".checkout-box-container")
         const placeOrder = document.querySelector(".place-order");
-        
+
         placeOrder.addEventListener('click', () => {
             checkoutBoxContainer.style.display = "none";
             if (!isThanksForOrderContainer) {
