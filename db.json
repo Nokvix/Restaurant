@@ -318,5 +318,133 @@
         "price": 670,
         "src": "img\\prawn-salad.jpg",
         "weight": 185
+    },
+    {
+        "id": 41,
+        "name": "Салат овощной со сметаной",
+        "category": "Детское меню",
+        "price": 190,
+        "src": "img\\vegetable-salad.jpg",
+        "weight": 150
+    },
+    {
+        "id": 42,
+        "name": "Салат Пражский",
+        "category": "Детское меню",
+        "price": 270,
+        "src": "img\\prague-salad.jpg",
+        "weight": 155
+    },
+    {
+        "id": 43,
+        "name": "Куриный бульон с фрикадельками",
+        "category": "Детское меню",
+        "price": 150,
+        "src": "img\\chicken-broth-with-meatballs.jpg",
+        "weight": 280
+    },
+    {
+        "id": 44,
+        "name": "Борщ со сметаной",
+        "category": "Детское меню",
+        "price": 190,
+        "src": "img\\borscht-with-sour-cream.jpg",
+        "weight": 290
+    },
+    {
+        "id": 45,
+        "name": "Корн дог с картофелем фри",
+        "category": "Детское меню",
+        "price": 370,
+        "src": "img\\corn-dog.jpg",
+        "weight": 250
+    },
+    {
+        "id": 46,
+        "name": "Карбонара с бабочками",
+        "category": "Детское меню",
+        "price": 250,
+        "src": "img\\carbonara.jpg",
+        "weight": 230
+    },
+    {
+        "id": 47,
+        "name": "Чизбургер с куриной котлетой",
+        "category": "Детское меню",
+        "price": 350,
+        "src": "img\\cheeseburger.jpg",
+        "weight": 200
+    },
+    {
+        "id": 48,
+        "name": "Паровые куриные котлеты",
+        "category": "Детское меню",
+        "price": 230,
+        "src": "img\\steamed-chicken-cutlets.jpg",
+        "weight": 230
+    },
+    {
+        "id": 49,
+        "name": "Куриные наггетсы с соусом коктейль",
+        "category": "Детское меню",
+        "price": 290,
+        "src": "img\\chicken-nuggets.jpg",
+        "weight": 150
+    },
+    {
+        "id": 50,
+        "name": "Пельмени со сметаной",
+        "category": "Детское меню",
+        "price": 250,
+        "src": "img\\dumplings.jpg",
+        "weight": 230
+    },
+    {
+        "id": 51,
+        "name": "Фруктовый салат",
+        "category": "Детское меню",
+        "price": 210,
+        "src": "img\\fruit-salad.jpg",
+        "weight": 165
+    },
+    {
+        "id": 52,
+        "name": "Наполеон с вишневым соусом",
+        "category": "Десерты",
+        "price": 470,
+        "src": "img\\napoleon.jpg",
+        "weight": 235
+    },
+    {
+        "id": 53,
+        "name": "Сметанник с ягодами",
+        "category": "Десерты",
+        "price": 390,
+        "src": "img\\sour-cream-cake.jpg",
+        "weight": 160
+    },
+    {
+        "id": 54,
+        "name": "Торт Прага",
+        "category": "Десерты",
+        "price": 370,
+        "src": "img\\prague-cake.jpg",
+        "weight": 155
+    },
+    {
+        "id": 55,
+        "name": "Медовый торт с соленой карамелью",
+        "category": "Десерты",
+        "price": 350,
+        "src": "img\\honey-cake.jpg",
+        "weight": 135
+    },
+    {
+        "id": 56,
+        "name": "Чизкейк манго-маракуйя",
+        "category": "Десерты",
+        "price": 450,
+        "src": "img\\cheesecake.jpg",
+        "weight": 190
     }
 ]

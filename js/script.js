@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     initializeMenu();
 
-    const categories = ["Всё", "Супы", "Мясо", "Салаты", "Напитки", "Гарниры"]
+    const categories = ["Всё", "Салаты", "Супы", "Мясо", "Гарниры", "Десерты", "Детское меню", "Напитки"]
 
     let cartItems = [];
 
