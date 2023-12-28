@@ -94,5 +94,157 @@
         "price": 830,
         "src": "img\\sugar-pork-ribs.jpg",
         "weight": 665
+    },
+    {
+        "id": 13,
+        "name": "Дранники",
+        "category": "Гарниры",
+        "price": 250,
+        "src": "img\\draniki.jpg",
+        "weight": 200
+    },
+    {
+        "id": 14,
+        "name": "Капуста тушеная красная",
+        "category": "Гарниры",
+        "price": 170,
+        "src": "img\\braised-cabbage.jpg",
+        "weight": 150
+    },
+    {
+        "id": 15,
+        "name": "Картофель жареный с луком",
+        "category": "Гарниры",
+        "price": 170,
+        "src": "img\\fried-potatoes.jpg",
+        "weight": 180
+    },
+    {
+        "id": 16,
+        "name": "Соте из овощей",
+        "category": "Гарниры",
+        "price": 230,
+        "src": "img\\sautéed-vegetables.jpg",
+        "weight": 180
+    },
+    {
+        "id": 17,
+        "name": "Овощи гриль",
+        "category": "Гарниры",
+        "price": 270,
+        "src": "img\\grilled-vegetables.jpg",
+        "weight": 200
+    },
+    {
+        "id": 18,
+        "name": "Картофельное пюре",
+        "category": "Гарниры",
+        "price": 150,
+        "src": "img\\mashed-potatoes.jpg",
+        "weight": 150
+    },
+    {
+        "id": 19,
+        "name": "Картофельные дольки",
+        "category": "Гарниры",
+        "price": 210,
+        "src": "img\\potato-wedges.jpg",
+        "weight": 150
+    },
+    {
+        "id": 20,
+        "name": "Картофельный салат",
+        "category": "Гарниры",
+        "price": 150,
+        "src": "img\\potato-salad.jpg",
+        "weight": 185
+    },
+    {
+        "id": 21,
+        "name": "Люля-кебаб из баранины",
+        "category": "Мясо",
+        "price": 590,
+        "src": "img\\lamb-kebab.jpg",
+        "weight": 385
+    },
+    {
+        "id": 22,
+        "name": "Шашлык из молодого барашка",
+        "category": "Мясо",
+        "price": 730,
+        "src": "img\\lamb-shish-kebab.jpg",
+        "weight": 365
+    },
+    {
+        "id": 23,
+        "name": "Шашлык из молодого барашка",
+        "category": "Мясо",
+        "price": 590,
+        "src": "img\\pork-kebab.jpg",
+        "weight": 385
+    },
+    {
+        "id": 24,
+        "name": "Шашлык из фермерского цыпленка",
+        "category": "Мясо",
+        "price": 550,
+        "src": "img\\farm-chicken-kebab.jpg",
+        "weight": 440
+    },
+    {
+        "id": 25,
+        "name": "Брабец свиная буженина",
+        "category": "Мясо",
+        "price": 870,
+        "src": "img\\pork-bacon-brabetz.jpg",
+        "weight": 615
+    },
+    {
+        "id": 26,
+        "name": "Домашние мясные котлеты",
+        "category": "Мясо",
+        "price": 490,
+        "src": "img\\homemade-meat-patties.jpg",
+        "weight": 515
+    },
+    {
+        "id": 27,
+        "name": "Морской окунь на гриле",
+        "category": "Мясо",
+        "price": 670,
+        "src": "img\\grilled-sea-bass.png",
+        "weight": 320
+    },
+    {
+        "id": 28,
+        "name": "Форель, запеченная с молодым картофелем в сливочном соусе на сковороде",
+        "category": "Мясо",
+        "price": 950,
+        "src": "img\\trout.jpg",
+        "weight": 320
+    },
+    {
+        "id": 29,
+        "name": "Филе трески с картофельным пюре с томатами и шпинатоме",
+        "category": "Мясо",
+        "price": 770,
+        "src": "img\\codfish.jpg",
+        "weight": 375
+    },
+    {
+        "id": 30,
+        "name": "Плескавица из баранины с золотистым картофелем и томатной сальсой",
+        "category": "Мясо",
+        "price": 690,
+        "src": "img\\lamb-pleskavica.jpg",
+        "weight": 420
+    },
+    {
+        "id": 31,
+        "name": "Утиная ножка с красной капустой и яблоками",
+        "category": "Мясо",
+        "price": 750,
+        "src": "img\\duck-leg.jpg",
+        "weight": 380
     }
 ]
