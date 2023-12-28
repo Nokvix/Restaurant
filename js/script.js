@@ -109,6 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCart() {
         cartItemsContainer.innerHTML = "";
         let totalAmount = 0;
+        if (cartItems.length > 0) {
+            checkoutBtn.disabled = false;
+        } else {
+            checkoutBtn.disabled = true;
+        }
         localStorage.setItem(keyLocalStorage, JSON.stringify(cartItems));
 
         cartItems.forEach(item => {
@@ -193,7 +198,39 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     checkoutBtn.addEventListener("click", () => {
-        alert("Оформление заказа пока не реализовано");
+        // alert("Оформление заказа пока не реализовано");
+        if (!document.querySelector(".checkout-box-container")) {
+            const checkoutBoxContainer = document.createElement('div');
+            checkoutBoxContainer.classList.add("checkout-box-container");
+            checkoutBoxContainer.innerHTML = `
+            <div class="checkout-box">
+                <div class="checkout-box-content">
+                    <div class="checkout-box-header">
+                        <h2>Оформление заказа</h2>
+                        <button class="close-checkout-box">&times;</button>
+                    </div>
+                    <p>Введите номер телефона, чтобы оператор доставки смог с вами связаться</p>
+                    <div class="phone-order">
+                        <input class="phone-number" type="tel" name="phoneNumber" placeholder="Введите номер телефона +7(999) 999-99-99" required>
+                        <button class="place-order">ОФОРМИТЬ</button>
+                    </div>
+                </div>
+            </div>
+            `
+            document.body.appendChild(checkoutBoxContainer);
+            checkoutBoxContainer.style.display = "block";
+            const closeCheckoutBoxBtn = document.querySelector(".close-checkout-box");
+            closeCheckoutBoxBtn.addEventListener('click', () => {
+                checkoutBoxContainer.style.display = "none";
+            });
+        } else {
+            const checkoutBoxContainer = document.querySelector(".checkout-box-container");
+            checkoutBoxContainer.style.display = "block";
+            const closeCheckoutBoxBtn = document.querySelector(".close-checkout-box");
+            closeCheckoutBoxBtn.addEventListener('click', () => {
+                checkoutBoxContainer.style.display = "none";
+            });
+        }
     });
 
     const cartHeader = document.querySelector('.cart');
