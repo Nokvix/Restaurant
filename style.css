@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+  }
+
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -36,7 +40,6 @@ button {
     top: 0;
     right: 0;
     width: 20%;
-    background-color: #f9f9f9;
     padding: 10px;
     background-color: #eee9ca;
     border: 1px solid #453224;
@@ -253,4 +256,38 @@ button {
 
 .filter-item:active {
     opacity: 0.5;
+}
+
+.active {
+    background-color: #eee9ca;
+}
+
+.arrow-up-btn {
+    position: fixed;
+    right: 2vw;
+    bottom: 5vh;
+    background: none;
+    border: 1px solid #453224;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #453224;
+    text-align: center;
+    vertical-align: middle;
+    display: none;
+}
+
+.arrow-up-btn:hover {
+    background-color: #eee9ca;
+    opacity: 0.7;
+}
+
+.arrow-up-btn:active {
+    background-color: #eee9ca;
+    opacity: 0.5;
+}
+
+.show-arrow-up-btn {
+    display: inline-block;
 }

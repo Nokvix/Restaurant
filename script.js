@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const totalAmountSpan = document.querySelector(".total-amount");
     const viewCartBtn = document.querySelector(".view-cart-btn");
     const checkoutBtn = document.querySelector(".checkout-btn");
+    let previousCategory = "Всё";
 
     let menuItems = [
         { "id": 1, "name": "Куриный суп", "category": "Супы", "price": 350, "src": "img\\chicken-soup.jpeg", "weight": 400 },
@@ -27,7 +28,6 @@ document.addEventListener("DOMContentLoaded", () => {
     let cartItems = [];
 
     function displayMenu(menuItems) {
-        // Очищаем контейнер меню
         menuContainer.innerHTML = "";
         menuItems.forEach(item => {
             const menuItem = document.createElement("div");
@@ -215,10 +215,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const filterItem = document.createElement("div");
             filterItem.classList.add("filter-item");
             filterItem.textContent = category;
+            if (category === previousCategory) {
+                filterItem.classList.add("active");
+            }
 
             filterItem.addEventListener("click", () => {
                 filterMenu(category)
                 filterMenuContainer.classList.toggle("show");
+                previousCategory = category;
             });
 
             filterMenuContainer.appendChild(filterItem);
@@ -235,6 +239,19 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
     }
+
+    const upButton = document.querySelector(".arrow-up-btn");
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            upButton.classList.add("show-arrow-up-btn");
+        } else {
+            upButton.classList.remove("show-arrow-up-btn");
+        }
+    });
+
+    upButton.addEventListener('click', () => {
+        window.scrollTo(0, 0);
+    });
 
     displayMenu(menuItems);
 });
