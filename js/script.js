@@ -9,20 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let previousCategory = "Всё";
     const keyLocalStorage = "cartItems";
 
-    let menuItems = [
-        { "id": 1, "name": "Куриный суп", "category": "Супы", "price": 350, "src": "img\\chicken-soup.jpeg", "weight": 400 },
-        { "id": 2, "name": "Фланк стейк", "category": "Мясо", "price": 950, "src": "img\\flank-steak.jpg", "weight": 330 },
-        { "id": 3, "name": "Салат Цезарь", "category": "Салаты", "price": 570, "src": "img\\caesar-salad.jpg", "weight": 220 },
-        { "id": 4, "name": "Морс клюквенный 1л", "category": "Напитки", "price": 520, "src": "img\\cranberry-morsels.jpg", "weight": 1000 },
-        { "id": 5, "name": "Филе миньон", "category": "Мясо", "price": 1150, "src": "img\\filet-mignon.jpg", "weight": 310 },
-        { "id": 6, "name": "Морс клюквенный 250мл", "category": "Напитки", "price": 130, "src": "img\\cranberry-morsels-0.25.jpg", "weight": 250 },
-        { "id": 7, "name": "Морс облепиховый 250мл", "category": "Напитки", "price": 130, "src": "img\\sea-buckthorn-morsel-250.jpg", "weight": 250 },
-        { "id": 8, "name": "Морс облепиховый 1л", "category": "Напитки", "price": 520, "src": "img\\sea-buckthorn-morsel.jpg", "weight": 1000 },
-        { "id": 9, "name": "Салат Старопражский", "category": "Салаты", "price": 490, "src": "img\\staroprazhsky-salad.jpg", "weight": 230 },
-        { "id": 10, "name": "Гороховый суп на копченом ребре", "category": "Супы", "price": 390, "src": "img\\pea-soup.jpg", "weight": 435 },
-        { "id": 11, "name": "Борщ из телятины", "category": "Супы", "price": 390, "src": "img\\veal-borscht.jpg", "weight": 340 },
-        { "id": 12, "name": "Сахарные свиные рёбрышки", "category": "Мясо", "price": 830, "src": "img\\sugar-pork-ribs.jpg", "weight": 665 },
-    ];
+    let menuItems = [];
+
+    initializeMenu();
 
     const categories = ["Всё", "Супы", "Мясо", "Салаты", "Напитки", "Гарниры"]
 
@@ -89,6 +78,16 @@ document.addEventListener("DOMContentLoaded", () => {
                 quantityElement.dataset.quantity = quantity;
             });
         });
+    }
+
+    async function getMenuItems () {
+        const result = await fetch('db.json').then(res => res.json());
+        return result;
+    }
+
+    async function initializeMenu() {
+        menuItems = await getMenuItems();
+        displayMenu(menuItems);
     }
 
     function addToCart(itemId, quantity = 1) {
@@ -198,7 +197,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     checkoutBtn.addEventListener("click", () => {
-        // alert("Оформление заказа пока не реализовано");
         if (!document.querySelector(".checkout-box-container")) {
             const checkoutBoxContainer = document.createElement('div');
             checkoutBoxContainer.classList.add("checkout-box-container");
@@ -220,6 +218,7 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.appendChild(checkoutBoxContainer);
             checkoutBoxContainer.style.display = "block";
             const closeCheckoutBoxBtn = document.querySelector(".close-checkout-box");
+
             closeCheckoutBoxBtn.addEventListener('click', () => {
                 checkoutBoxContainer.style.display = "none";
             });
@@ -227,6 +226,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const checkoutBoxContainer = document.querySelector(".checkout-box-container");
             checkoutBoxContainer.style.display = "block";
             const closeCheckoutBoxBtn = document.querySelector(".close-checkout-box");
+
             closeCheckoutBoxBtn.addEventListener('click', () => {
                 checkoutBoxContainer.style.display = "none";
             });
