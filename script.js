@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
+
     const menuContainer = document.querySelector(".menu");
     const cartContainer = document.querySelector(".cart");
     const cartItemsContainer = document.querySelector(".cart-items");
@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const viewCartBtn = document.querySelector(".view-cart-btn");
     const checkoutBtn = document.querySelector(".checkout-btn");
     let previousCategory = "Всё";
+    const keyLocalStorage = "cartItems";
 
     let menuItems = [
         { "id": 1, "name": "Куриный суп", "category": "Супы", "price": 350, "src": "img\\chicken-soup.jpeg", "weight": 400 },
@@ -108,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateCart() {
         cartItemsContainer.innerHTML = "";
         let totalAmount = 0;
+        localStorage.setItem(keyLocalStorage, JSON.stringify(cartItems));
 
         cartItems.forEach(item => {
             const cartItem = document.createElement("li");
@@ -179,11 +181,18 @@ document.addEventListener("DOMContentLoaded", () => {
         updateCart();
     }
 
-    viewCartBtn.addEventListener("click", function () {
+    function loadFromLocalStorage() {
+        let data = localStorage.getItem(keyLocalStorage);
+        
+        cartItems = data ? JSON.parse(data) : [];
+    }
+
+    viewCartBtn.addEventListener("click", () => {
+        loadFromLocalStorage();
         updateCart();
     });
 
-    checkoutBtn.addEventListener("click", function () {
+    checkoutBtn.addEventListener("click", () => {
         alert("Оформление заказа пока не реализовано");
     });
 
@@ -193,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
     closeCartBtn.innerHTML = '&times;';
     cartHeader.appendChild(closeCartBtn);
 
-    closeCartBtn.addEventListener('click', function () {
+    closeCartBtn.addEventListener('click', () => {
         cartContainer.style.display = "none";
         menuContainer.style.width = "100%";
     });
