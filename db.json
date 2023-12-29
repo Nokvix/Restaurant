@@ -446,5 +446,45 @@
         "price": 450,
         "src": "img\\cheesecake.jpg",
         "weight": 190
+    },
+    {
+        "id": 57,
+        "name": "Фреш яблочный 250мл",
+        "category": "Напитки",
+        "price": 350,
+        "src": "img\\apple-juice.jpg",
+        "weight": 250
+    },
+    {
+        "id": 58,
+        "name": "Фреш апельсиновый 250мл",
+        "category": "Напитки",
+        "price": 350,
+        "src": "img\\orange-juice.jpg",
+        "weight": 250
+    },
+    {
+        "id": 59,
+        "name": "Фреш морковный 250мл",
+        "category": "Напитки",
+        "price": 350,
+        "src": "img\\carrot-juice.jpg",
+        "weight": 250
+    },
+    {
+        "id": 60,
+        "name": "Лимонад фруктовый микс и цитрусы 500мл",
+        "category": "Напитки",
+        "price": 460,
+        "src": "img\\fruit-lemonade.jpg",
+        "weight": 500
+    },
+    {
+        "id": 61,
+        "name": "Лимонад Малина розмарин 500мл",
+        "category": "Напитки",
+        "price": 460,
+        "src": "img\\raspberry-lemonade.jpg",
+        "weight": 500
     }
 ]
